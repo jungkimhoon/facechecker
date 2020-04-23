@@ -1,4 +1,6 @@
 # facechecker
+<h3>FACECHECKER</h3>
+라즈베리파이 기반 행인들의 얼굴을 인식하여 나이, 성별을 분석하고 그에 기반된 데이터로 그에 맞는 광고를 출력합니다.
 <img src="https://user-images.githubusercontent.com/59942147/80096221-2e87bd80-85a4-11ea-84ed-3d75b2602e0a.png" height="300px" width="40%"></img><br>
 
 1. 영상을 촬영합니다.
