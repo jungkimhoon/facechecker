@@ -1,0 +1,26 @@
+package Usera;
+
+public class user {
+	private String manager_id;
+	private String manager_ps;
+	//private int manage_machine;
+	public String getmanager_id() {
+		return manager_id;
+	}
+	public void setmanager_id(String manager_id) {
+		this.manager_id = manager_id;
+	}
+	public String getmanager_ps() {
+		return manager_ps;
+	}
+	public void setmanager_ps(String manager_ps) {
+		this.manager_ps = manager_ps;
+	}
+	/*public int manage_machine() {
+		return manage_machine;
+	}
+	public void manage_machine(int manage_machine) {
+		this.manage_machine = manage_machine;
+	}
+	*/
+}

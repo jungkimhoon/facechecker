@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%if(session.getAttribute("user")!=null){
+		%>
+		<script>
+		location.href='main.jsp';</script>
+	
+	<%}else { %>
+	<form action = "loginAction.jsp">
+		<table>
+			<tr>
+				<td>아이디 :</td>
+				<td><input type=text name='manager_id' width='300'></td>
+			</tr>
+			<tr>
+				<td>비밀번호 :</td>
+				<td><input type=text name='manager_ps' width='300'></td>
+			</tr>
+			<tr>
+				<td><input type=submit value="전송"></td> 
+				<!--전송 버튼 누르면 loginAction.jsp로 정보가 넘어감 -->
+				<td><input type=reset value="취소"></td>
+			</tr>
+		</table>
+	</form>
+		<%} %>
+</body>
+</html>
+
+

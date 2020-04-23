@@ -1,0 +1,52 @@
+<%@page import="Usera.Detecteddata"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%> 
+<% String str = request.getParameter("input");
+   String str1 = request.getParameter("input1");
+   String str2 = request.getParameter("input2");
+%> 
+<%@ page import="Usera.UserDAO"%>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.Connection" %>
+<jsp:useBean id="Detecteddata" class="Usera.Detecteddata" scope="page" />
+<jsp:setProperty name="Detecteddata" property="num" />
+<jsp:setProperty name="Detecteddata" property="gender" />
+<jsp:setProperty name="Detecteddata" property="age" />
+<!DOCTYPE html> 
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style> h1 {font-size:16pt; background:#AAFFAA; padding:5px; } </style>
+     <script type="text/javascript">
+     function doAction()
+     {
+     var s1 = document.getElementById('input1').value;
+     var s2 = document.getElementById('input2').value;
+     var url = 'ts.jsp?gender=' + encodeURI(s1)+'&age='+encodeURI(s2); 
+     window.location.href = url; }
+     </script> 
+     </head> 
+     <body> 
+     			<%=str1 %>
+     			<%=str2 %>      
+     <input type="text" id="input2">
+     <input type="text" id="input3">
+	
+			<%
+			int result;
+			Connection conn=null;
+		 	PreparedStatement pstmt;
+		 	ResultSet rs;
+			pstmt=null;
+			rs=null;
+	     	UserDAO userDAO = new UserDAO();
+
+			System.out.print("  gender="+Detecteddata.getGender()+"  age="+Detecteddata.getAge());
+ 			if(Detecteddata.getAge()!=null&Detecteddata.getGender()!=null){
+			result = userDAO.insertData(Detecteddata.getGender(), Detecteddata.getAge());
+			} 
+
+%>
+
+     </body> 
+     </html>

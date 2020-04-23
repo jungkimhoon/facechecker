@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+	<script>
+	function logoutCheck(){
+		if(confirm("로그아웃 하시겠습니까?")){
+			location.href="LogOut.jsp";
+		}
+	}
+	</script>
+<body>
+환영합니다.
+
+<%
+String userID = null;
+if(session.getAttribute("user")!=null){
+	
+	userID=(String)session.getAttribute("user");	
+}
+if(userID!=null){%>	
+
+	<%=session.getAttribute("user") %>님 로그인중		<form><input type="button" value="로그아웃" onclick="logoutCheck()"/></form>
+	<a href="http://localhost:8080/capstone/DataView.jsp">데이터 조회</a>
+<%}
+if(userID==null){%>
+	<script>
+		alert("로그인 후 이용가능합니다.");
+		location.href='login.jsp';</script>
+<%}
+%>
+</body>
+</html>
